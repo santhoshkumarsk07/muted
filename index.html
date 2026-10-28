@@ -24,11 +24,13 @@
     <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2.5" y="7" width="17" height="10" rx="2"/><path d="M21.5 10.5v3"/><path d="m11.5 8.8-2.4 3.6h3.8l-2.4 3.8"/></symbol>
     <symbol id="i-engine" viewBox="0 0 24 24"><path d="M4.6 17.4a9 9 0 1 1 14.8 0"/><path d="m12 13 4-4.5"/><circle cx="12" cy="13" r="1.4"/><path d="M7 21h10"/></symbol>
     <symbol id="i-lab" viewBox="0 0 24 24"><path d="M3 8h10.5a2.5 2.5 0 1 0-2.5-2.5"/><path d="M3 12h15.5a2.5 2.5 0 1 1-2.5 2.5"/><path d="M3 16h7.5a2.5 2.5 0 1 1-2.5 2.5"/></symbol>
+    <symbol id="i-automation" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 8h3M7 11h5"/><circle cx="16" cy="9.5" r="2"/></symbol>
     <symbol id="i-renewable" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 5.2 5.2l1.4-2.1 4.2 1.6V17a3 3 0 0 1-3 3A15.5 15.5 0 0 1 2 6.5a3 3 0 0 1 3-3Z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
   </svg>
 
@@ -81,24 +83,22 @@
           <p class="eyebrow eyebrow-dark" data-enter style="--e:0">MMI Hydrogen Technologies</p>
           <!-- EDIT: refine the headline to match the company's approved positioning -->
           <h1 id="hero-title" class="hero-title" data-enter style="--e:1">Engineering advanced <span class="accent">hydrogen</span> &amp; industrial technology solutions</h1>
-          <p class="hero-lede" data-enter style="--e:2">Electrolysers, hydrogen and fuel-cell training systems, battery testing, engine test rigs and laboratory equipment — for research, testing and technical education.</p>
+          <p class="hero-lede" data-enter style="--e:2">AEM hydrogen generators, electrolyser and fuel-cell systems, battery testing, engine test rigs, air conditioning, automation and solar training equipment — for research, testing and technical education.</p>
           <div class="hero-actions" data-enter style="--e:3">
             <a class="btn btn-primary btn-lg" href="#products">Explore products <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <a class="btn btn-ghost btn-lg" href="#contact">Request a quote</a>
           </div>
           <ul class="hero-tags" data-enter style="--e:4" aria-label="Product areas">
-            <li>AEM &amp; PEM electrolysers</li>
-            <li>Fuel-cell training</li>
+            <li>Hydrogen generation</li>
+            <li>Fuel-cell test stations</li>
             <li>Battery testing</li>
             <li>Engine test rigs</li>
-            <li>Solar training</li>
+            <li>PLC &amp; process control</li>
           </ul>
         </div>
 
-        <!-- Decorative technical composition. To feature a product photo instead,
-             place an <img> inside .hero-stage and remove the .molecule svg. -->
-        <div class="hero-visual" data-enter style="--e:2" aria-hidden="true">
-          <svg class="rings" viewBox="0 0 500 500">
+        <div class="hero-visual" data-enter style="--e:2">
+          <svg class="rings" viewBox="0 0 500 500" aria-hidden="true" focusable="false">
             <circle class="ring ring-1" cx="250" cy="250" r="236"/>
             <circle class="ring ring-2" cx="250" cy="250" r="196"/>
             <circle class="ring ring-3" cx="250" cy="250" r="156"/>
@@ -108,23 +108,12 @@
               <path d="M250 2v14M250 484v14M2 250h14M484 250h14"/>
             </g>
           </svg>
-          <div class="hero-stage">
-            <span class="pulse"></span><span class="pulse pulse-2"></span>
-            <svg class="molecule" viewBox="0 0 240 160">
-              <defs>
-                <radialGradient id="atom" cx="35%" cy="30%" r="75%">
-                  <stop offset="0" stop-color="#ff7a99"/>
-                  <stop offset=".55" stop-color="#F2245A"/>
-                  <stop offset="1" stop-color="#9e0f33"/>
-                </radialGradient>
-              </defs>
-              <path class="bond" d="M86 80h68"/>
-              <circle cx="68" cy="80" r="42" fill="url(#atom)"/>
-              <circle cx="172" cy="80" r="42" fill="url(#atom)"/>
-              <text x="68" y="92" text-anchor="middle">H</text>
-              <text x="172" y="92" text-anchor="middle">H</text>
-            </svg>
-          </div>
+          <div class="hero-stage" aria-hidden="true"><span class="pulse"></span><span class="pulse pulse-2"></span></div>
+          <figure class="hero-product">
+            <img src="assets/img/products/aem-hydrogen-generator-lg.webp" width="492" height="994" fetchpriority="high"
+                 alt="MMI AEM Based Hydrogen Generator, model MMI AEM-HG-01">
+            <figcaption><span class="chip-dot" aria-hidden="true"></span>AEM Based Hydrogen Generator</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -139,14 +128,21 @@
           <p class="eyebrow">About MMI</p>
           <h2 id="about-title" class="section-title">A solution provider for hydrogen, testing and training</h2>
           <!-- EDIT: replace with the company's verified introduction, history and mission. -->
-          <p class="lead">MMI Hydrogen Technologies provides hydrogen technology, testing equipment and technical training systems. Our range spans electrolysers and fuel-cell kits through to battery testing, engine test rigs and laboratory air and pressure systems.</p>
+          <p class="lead">MMI Hydrogen Technologies provides hydrogen technology, testing equipment and technical training systems. Our range spans AEM hydrogen generation, electrolyser and fuel-cell systems through to battery testing, engine test rigs, air conditioning rigs, automation trainers and solar and thermal energy equipment.</p>
           <p>Tell us about your laboratory, test facility or training programme and our team will help you identify suitable equipment and configurations.</p>
           <a class="link-arrow" href="#contact">Talk to our team <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
 
+        <div class="about-side">
+          <figure class="about-figure reveal">
+            <img src="assets/img/products/industrial-hydrogen-training-system-lg.webp" width="958" height="656" loading="lazy"
+                 alt="MMI Industrial Hydrogen Training System: water treatment, hydrogen generation and automation cabinets">
+            <figcaption>Industrial Hydrogen Training System</figcaption>
+          </figure>
         <ul class="expertise" aria-label="Areas of expertise" data-expertise>
           <!-- Filled from the product catalogue in assets/js/products.js -->
         </ul>
+        </div>
       </div>
     </section>
 
@@ -167,7 +163,7 @@
         <ul class="product-grid" data-product-grid></ul>
 
         <noscript>
-          <p class="noscript-note">The interactive catalogue needs JavaScript. Our product range includes AEM and PEM electrolysers, hydrogen training systems, a fuel cell training kit, a battery testing system, engine testing equipment, a hybrid CRDI system, an eddy current dynamometer test rig, open-type and recirculation-type air systems, PID-control-based pressure equipment, a solar concentrator training system and MF-100 / MF-400 equipment. Please <a href="#contact">contact us</a> for details.</p>
+          <p class="noscript-note">The interactive catalogue needs JavaScript. Our range includes an AEM based hydrogen generator, hydrogen gas generator system, industrial hydrogen training system, electrolyzer with fuel cell systems, a PEM fuel cell test station, a fuel cell system test setup, battery and fuel cell / supercapacitor testers, petrol and hybrid CRDI engine test rigs with eddy current dynamometers, open and re-circulation type air conditioning rigs, a PLC trainer kit, a PID pressure control loop kit, a solar concentrator training system and a pyrolysis reactor. Please <a href="#contact">contact us</a> for details.</p>
         </noscript>
       </div>
     </section>
@@ -206,19 +202,23 @@
           <h2 id="contact-title" class="section-title">Request a quote or ask a technical question</h2>
           <p>Tell us which product or application you are interested in and our team will get back to you.</p>
 
-          <!-- EDIT: replace the bracketed placeholders with verified contact details. -->
+          <!-- Contact details as printed on MMI product panels (Micro Mech Instruments, Chennai-97). EDIT: confirm, and add the full street address. -->
           <ul class="contact-list">
             <li>
               <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
-              <span><strong>Email</strong><span class="is-placeholder">[Company email address]</span></span>
+              <span><strong>Email</strong><a href="mailto:salesmmi@micromechinstruments.com">salesmmi@micromechinstruments.com</a></span>
             </li>
             <li>
               <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
-              <span><strong>Telephone</strong><span class="is-placeholder">[Company telephone number]</span></span>
+              <span><strong>Telephone</strong><a href="tel:+919840049311">+91 98400 49311</a></span>
             </li>
             <li>
               <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
-              <span><strong>Address</strong><span class="is-placeholder">[Company address]</span></span>
+              <span><strong>Location</strong>Chennai – 97, Tamil Nadu, India <span class="is-placeholder">[Full street address]</span></span>
+            </li>
+            <li>
+              <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></span>
+              <span><strong>Website</strong><a href="https://www.micromechinstruments.com" target="_blank" rel="noopener noreferrer">www.micromechinstruments.com</a></span>
             </li>
           </ul>
         </div>
@@ -229,7 +229,7 @@
           an "open in email app" fallback. With neither set, the form validates input and
           tells the user plainly that it is not yet connected — it never fakes a success.
         -->
-        <form class="enquiry-form reveal" novalidate data-enquiry-form data-endpoint="" data-mailto="">
+        <form class="enquiry-form reveal" novalidate data-enquiry-form data-endpoint="" data-mailto="salesmmi@micromechinstruments.com">
           <h3 class="form-title">Enquiry form</h3>
           <p class="form-note">Fields marked <span aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
 
@@ -309,8 +309,9 @@
         <h2 class="footer-heading">Get in touch</h2>
         <ul>
           <li><a href="#contact">Request a quote</a></li>
-          <li><span class="is-placeholder">[Company email address]</span></li>
-          <li><span class="is-placeholder">[Company telephone number]</span></li>
+          <li><a href="mailto:salesmmi@micromechinstruments.com">salesmmi@micromechinstruments.com</a></li>
+          <li><a href="tel:+919840049311">+91 98400 49311</a></li>
+          <li><span>Chennai, India</span></li>
         </ul>
       </div>
     </div>
@@ -331,6 +332,7 @@
       <div class="pd-body">
         <p class="pd-category" data-pd-category></p>
         <h2 class="pd-title" id="pd-title" data-pd-title></h2>
+        <p class="pd-model" data-pd-model hidden></p>
         <p class="pd-summary" data-pd-summary></p>
         <div data-pd-sections></div>
         <div class="pd-actions">

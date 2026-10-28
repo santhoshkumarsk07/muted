@@ -66,13 +66,19 @@
     ]);
   }
 
+  var IMG_DIR = 'assets/img/products/';
+  // Cards use the 640px derivative, the dialog the 1200px one.
+  function imageUrl(name, size) { return IMG_DIR + name + '-' + size + '.webp'; }
+
   function productMedia(product, opts) {
     var category = categoriesById[product.category];
     if (!product.image) return placeholder(category);
+    var large = opts && opts.large;
     var img = el('img', {
-      src: product.image,
+      src: imageUrl(product.image, large ? 'lg' : 'sm'),
       alt: product.imageAlt || product.name,
-      loading: opts && opts.eager ? null : 'lazy',
+      className: product.fit === 'cover' && !large ? 'fit-cover' : null,
+      loading: large ? null : 'lazy',
       decoding: 'async',
       width: 800,
       height: 600
@@ -251,7 +257,7 @@
     catalogue.products.forEach(function (product, i) {
       var category = categoriesById[product.category];
       var titleId = 'pc-' + product.id;
-      var media = el('div', { className: 'pc-media' }, [
+      var media = el('div', { className: 'pc-media' + (product.image ? ' has-image' : '') }, [
         productMedia(product),
         category ? el('span', { className: 'pc-cat-badge', text: category.name }) : null
       ]);
@@ -264,6 +270,7 @@
           media,
           el('div', { className: 'pc-body' }, [
             el('h3', { className: 'pc-title', id: titleId, text: product.name }),
+            product.model ? el('p', { className: 'pc-model', text: 'Model ' + product.model }) : null,
             el('p', { className: 'pc-summary', text: product.summary }),
             el('div', { className: 'pc-actions' }, [
               el('button', {
@@ -388,19 +395,19 @@
 
     function fillMedia(product) {
       var media = $('[data-pd-media]', productDialog);
-      media.replaceChildren(productMedia(product, { eager: true }));
-      var images = product.image ? [{ src: product.image, alt: product.imageAlt || product.name }] : [];
+      media.replaceChildren(productMedia(product, { large: true }));
+      var images = product.image ? [{ image: product.image, alt: product.imageAlt || product.name }] : [];
       (product.gallery || []).forEach(function (g) { images.push(g); });
       if (images.length < 2) return;
 
       var gallery = el('div', { className: 'pd-gallery', role: 'group', 'aria-label': 'Product images' });
       images.forEach(function (image, i) {
         var thumb = el('button', { type: 'button', 'aria-pressed': String(i === 0), 'aria-label': 'Show image: ' + image.alt }, [
-          el('img', { src: image.src, alt: '', loading: 'lazy' })
+          el('img', { src: imageUrl(image.image, 'sm'), alt: '', loading: 'lazy' })
         ]);
         thumb.addEventListener('click', function () {
           var main = media.querySelector(':scope > img');
-          if (main) { main.src = image.src; main.alt = image.alt; }
+          if (main) { main.src = imageUrl(image.image, 'lg'); main.alt = image.alt; }
           $all('button', gallery).forEach(function (b) { b.setAttribute('aria-pressed', String(b === thumb)); });
         });
         gallery.appendChild(thumb);
@@ -417,6 +424,9 @@
       var category = categoriesById[product.category];
       $('[data-pd-category]', productDialog).textContent = category ? category.name : '';
       $('[data-pd-title]', productDialog).textContent = product.name;
+      var model = $('[data-pd-model]', productDialog);
+      model.textContent = product.model ? 'Model ' + product.model : '';
+      model.hidden = !product.model;
       $('[data-pd-summary]', productDialog).textContent = product.summary;
       fillMedia(product);
 
